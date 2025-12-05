@@ -515,7 +515,7 @@ def profile():
                 flash("New password cannot be empty.", "error")
             else:
                 new_hash = generate_password_hash(new_pw)
-                cur.execute(
+                cur.execute( 
                     "UPDATE users SET password_hash = %s WHERE id = %s",
                     (new_hash, user["id"]),
                 )
@@ -605,3 +605,4 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
